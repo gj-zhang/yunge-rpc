@@ -1,0 +1,16 @@
+*.log
+*.iml
+.DS_Store
+
+
+#for idean
+
+/.idea
+*/target
+**/target
+
+
+#for eclipse
+
+/.settings/
+/.project
