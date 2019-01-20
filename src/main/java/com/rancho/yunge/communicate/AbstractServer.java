@@ -4,7 +4,7 @@ import com.rancho.yunge.func.CallBack;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class AbstractServer {
+public abstract class AbstractServer implements Server {
 
     private static final Logger logger = LoggerFactory.getLogger(AbstractServer.class);
 

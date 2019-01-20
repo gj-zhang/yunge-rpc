@@ -1,5 +1,8 @@
 package com.rancho.yunge.provider;
 
+import com.rancho.yunge.params.RpcRequestWrapper;
+import com.rancho.yunge.params.RpcResponseWrapper;
+
 import java.util.Map;
 
 public interface RpcProvider {
@@ -12,6 +15,6 @@ public interface RpcProvider {
 
     String makeServiceKey(String iface, String version);
 
-    RpcProvider getRpcProvider();
+    RpcResponseWrapper invokeService(RpcRequestWrapper requestWrapper);
 
 }

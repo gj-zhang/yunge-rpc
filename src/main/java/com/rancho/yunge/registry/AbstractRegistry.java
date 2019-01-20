@@ -1,4 +1,4 @@
 package com.rancho.yunge.registry;
 
-public class AbstractRegistry implements Registry {
+public abstract class AbstractRegistry implements Registry {
 }
