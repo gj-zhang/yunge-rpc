@@ -15,7 +15,6 @@
         <netty.all.version>4.1.32.Final</netty.all.version>
     </properties>
 
-
    <dependencies>
 
        <!-- slfj4 -->
@@ -37,6 +36,12 @@
            <artifactId>netty-all</artifactId>
            <version>${netty.all.version}</version>
        </dependency>
+	   
+	    <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.47</version>
+        </dependency>
    </dependencies>
 
     <build>
