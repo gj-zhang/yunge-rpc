@@ -1,2 +1,2 @@
-# yunge-rpc
+# com.rancho.yunge-rpc
 A distributed rpc framework base on netty
