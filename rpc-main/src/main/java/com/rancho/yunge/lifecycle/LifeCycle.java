@@ -1,17 +1,13 @@
 package com.rancho.yunge.lifecycle;
 
-import com.rancho.yunge.context.ContextHolder;
-
+/**
+ * @author zgj-18063794
+ * @createTime 2019-01-22 15:00
+ */
 public interface LifeCycle {
 
     void start();
 
     void stop();
-
-    void setup(ContextHolder contextHolder);
-
-    LifeCycleStateEnum getCurrentState();
-
-    void setCurrentState(LifeCycleStateEnum currentState);
 
 }

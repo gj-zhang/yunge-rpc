@@ -4,7 +4,7 @@ package com.rancho.yunge.exception;
  * @author zgj-18063794
  * @createTime 2019-01-21 16:51
  */
-public class YunGeRpcException extends Exception {
+public class YunGeRpcException extends RuntimeException {
 
     public YunGeRpcException(String message) {
         super(message);

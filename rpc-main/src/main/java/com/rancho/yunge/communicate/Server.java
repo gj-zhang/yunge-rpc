@@ -1,8 +1,9 @@
 package com.rancho.yunge.communicate;
 
-import com.rancho.yunge.lifecycle.LifeCycle;
+import com.rancho.yunge.func.CallBack;
+import com.rancho.yunge.lifecycle.ApplicationContextLifeCycle;
 
-public interface Server extends LifeCycle {
+public interface Server extends ApplicationContextLifeCycle {
 
     String getIp();
 
@@ -12,8 +13,12 @@ public interface Server extends LifeCycle {
 
     void setPort(Integer port);
 
-    void onStart();
+    void onStart() throws Exception;
 
-    void onStop();
+    void onStop() throws Exception;
+
+    void setStartCallBack(CallBack startCallBack);
+
+    void setStopCallBack(CallBack stopCallBack);
 
 }

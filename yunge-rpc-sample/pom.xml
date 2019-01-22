@@ -3,13 +3,28 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>com.rancho.yunge-rpc</artifactId>
-        <groupId>com.rancho.com.rancho.yunge</groupId>
+        <artifactId>yunge-rpc</artifactId>
+        <groupId>com.rancho.yunge</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>com.rancho.yunge-rpc-sample</artifactId>
+    <artifactId>yunge-rpc-sample</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>yunge-rpc-sample-naked</module>
+        <module>yunge-rpc-sample-protocol</module>
+    </modules>
 
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.rancho.yunge</groupId>
+                <artifactId>rpc-main</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
 </project>

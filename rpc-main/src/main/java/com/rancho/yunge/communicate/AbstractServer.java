@@ -17,11 +17,12 @@ public abstract class AbstractServer extends AbstractLifeCycle implements Server
 
     private CallBack stopCallBack;
 
-
+    @Override
     public void setStartCallBack(CallBack startCallBack) {
         this.startCallBack = startCallBack;
     }
 
+    @Override
     public void setStopCallBack(CallBack stopCallBack) {
         this.stopCallBack = stopCallBack;
     }
@@ -47,13 +48,13 @@ public abstract class AbstractServer extends AbstractLifeCycle implements Server
     }
 
     @Override
-    public void onStart() {
+    public void onStart() throws Exception {
         startCallBack.run();
         setCurrentState(LifeCycleStateEnum.LIVE);
     }
 
     @Override
-    public void onStop() {
+    public void onStop() throws Exception {
         stopCallBack.run();
         setCurrentState(LifeCycleStateEnum.DEAD);
     }

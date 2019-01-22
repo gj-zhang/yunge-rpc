@@ -4,7 +4,7 @@ package com.rancho.yunge.lifecycle;
  * @author zgj-18063794
  * @createTime 2019-01-21 14:00
  */
-public abstract class AbstractLifeCycle implements LifeCycle {
+public abstract class AbstractLifeCycle implements ApplicationContextLifeCycle {
 
     private LifeCycleStateEnum currentState;
 

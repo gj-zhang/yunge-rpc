@@ -4,5 +4,5 @@ public interface Serializer<T> {
 
     byte[] serializer(T t);
 
-    T deserializer(byte[] bytes);
+    T deserializer(byte[] bytes, Class<T> tClass);
 }

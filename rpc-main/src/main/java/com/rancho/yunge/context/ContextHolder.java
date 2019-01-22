@@ -1,12 +1,15 @@
 package com.rancho.yunge.context;
 
 import com.rancho.yunge.communicate.CommunicateType;
+import com.rancho.yunge.configuration.YunGeConfiguration;
+import com.rancho.yunge.lifecycle.LifeCycle;
 import com.rancho.yunge.registry.Registry;
 import com.rancho.yunge.serializer.Serializer;
 
+import java.io.IOException;
 import java.util.Map;
 
-public interface ContextHolder {
+public interface ContextHolder extends LifeCycle {
 
 
     void addService(String iface, String version, Object rpcService);
@@ -31,8 +34,10 @@ public interface ContextHolder {
 
     Registry getRegistry();
 
+    /**
+     * @return not thread safe map
+     */
     Map<String, String> getRegistryParams();
 
-    void refresh() throws Exception;
-
+    YunGeConfiguration getConfiguration() throws IOException;
 }

@@ -1,11 +1,9 @@
-package com.rancho.yunge.provider;
+package com.rancho.yunge.invoke;
 
 import com.rancho.yunge.params.RpcRequestWrapper;
 import com.rancho.yunge.params.RpcResponseWrapper;
 
-import java.util.Map;
-
-public interface RpcProvider {
+public interface RpcInvoker {
 
     RpcResponseWrapper invokeService(RpcRequestWrapper requestWrapper);
 
