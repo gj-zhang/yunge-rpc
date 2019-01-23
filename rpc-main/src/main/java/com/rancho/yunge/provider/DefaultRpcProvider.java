@@ -1,4 +1,4 @@
-package com.rancho.yunge.invoke;
+package com.rancho.yunge.provider;
 
 import com.rancho.yunge.context.ContextHolder;
 import com.rancho.yunge.params.RpcRequestWrapper;
@@ -9,11 +9,11 @@ import org.slf4j.LoggerFactory;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-public class DefaultRpcInvoker extends AbstractRpcInvoker {
+public class DefaultRpcProvider extends AbstractRpcProvider {
 
-    private static final Logger logger = LoggerFactory.getLogger(DefaultRpcInvoker.class);
+    private static final Logger logger = LoggerFactory.getLogger(DefaultRpcProvider.class);
 
-    public DefaultRpcInvoker(ContextHolder contextHolder) {
+    public DefaultRpcProvider(ContextHolder contextHolder) {
         super(contextHolder);
     }
 

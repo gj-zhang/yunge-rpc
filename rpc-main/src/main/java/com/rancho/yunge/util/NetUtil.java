@@ -87,4 +87,12 @@ public class NetUtil {
         return local;
     }
 
+    public static Object[] parseIpPort(String address) {
+        String[] array = address.split(":");
+
+        String host = array[0];
+        int port = Integer.parseInt(array[1]);
+
+        return new Object[]{host, port};
+    }
 }

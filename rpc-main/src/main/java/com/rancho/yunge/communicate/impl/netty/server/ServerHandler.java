@@ -2,7 +2,7 @@ package com.rancho.yunge.communicate.impl.netty.server;
 
 import com.rancho.yunge.params.RpcRequestWrapper;
 import com.rancho.yunge.params.RpcResponseWrapper;
-import com.rancho.yunge.invoke.RpcInvoker;
+import com.rancho.yunge.provider.RpcProvider;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import org.slf4j.Logger;
@@ -18,10 +18,10 @@ public class ServerHandler extends SimpleChannelInboundHandler<RpcRequestWrapper
 
     private static final Logger logger = LoggerFactory.getLogger(ServerHandler.class);
 
-    private RpcInvoker rpcProvider;
+    private RpcProvider rpcProvider;
     private ThreadPoolExecutor serverHandlerPool;
 
-    public ServerHandler(RpcInvoker rpcProvider, ThreadPoolExecutor serverHandlerPool) {
+    public ServerHandler(RpcProvider rpcProvider, ThreadPoolExecutor serverHandlerPool) {
         this.rpcProvider = rpcProvider;
         this.serverHandlerPool = serverHandlerPool;
     }

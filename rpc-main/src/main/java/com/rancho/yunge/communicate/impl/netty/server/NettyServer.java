@@ -10,7 +10,7 @@ import com.rancho.yunge.exception.StartUpException;
 import com.rancho.yunge.exception.YunGeRpcException;
 import com.rancho.yunge.params.RpcRequestWrapper;
 import com.rancho.yunge.params.RpcResponseWrapper;
-import com.rancho.yunge.invoke.DefaultRpcInvoker;
+import com.rancho.yunge.provider.DefaultRpcProvider;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
@@ -31,7 +31,7 @@ public class NettyServer extends AbstractServer {
 
     private static final Logger logger = LoggerFactory.getLogger(NettyServer.class);
 
-    private DefaultRpcInvoker rpcProvider;
+    private DefaultRpcProvider rpcProvider;
     private ContextHolder contextHolder;
     //todo all config from configuration class
     private YunGeConfiguration configuration;
@@ -118,7 +118,7 @@ public class NettyServer extends AbstractServer {
     @Override
     public void setup(ContextHolder contextHolder) {
         this.contextHolder = contextHolder;
-        this.rpcProvider = new DefaultRpcInvoker(contextHolder);
+        this.rpcProvider = new DefaultRpcProvider(contextHolder);
         try {
             this.configuration = contextHolder.getConfiguration();
         } catch (IOException e) {
