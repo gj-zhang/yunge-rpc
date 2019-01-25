@@ -18,7 +18,11 @@ public class YunGeConfiguration {
 
     public YunGeConfiguration(String configPath) throws IOException {
         this.configPath = configPath;
-        FileUtil.parse(configPath);
+        try {
+            FileUtil.parse(configPath);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 

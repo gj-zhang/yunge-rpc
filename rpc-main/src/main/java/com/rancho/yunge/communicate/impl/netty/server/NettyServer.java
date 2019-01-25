@@ -70,9 +70,10 @@ public class NettyServer extends AbstractServer {
                         .option(ChannelOption.TCP_NODELAY, true)
                         .option(ChannelOption.SO_REUSEADDR, true)
                         .childOption(ChannelOption.SO_KEEPALIVE, true);
-                ChannelFuture future = serverBootstrap.bind(contextHolder.getPort()).sync();
                 logger.info("netty server start success, port = {}", contextHolder.getPort());
                 onStart();
+
+                ChannelFuture future = serverBootstrap.bind(contextHolder.getPort()).sync();
 
                 future.channel().closeFuture().sync();
             } catch (InterruptedException e) {

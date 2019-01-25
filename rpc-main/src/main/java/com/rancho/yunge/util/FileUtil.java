@@ -14,7 +14,7 @@ public class FileUtil {
         InputStream resourceAsStream =
                 Thread.currentThread().getContextClassLoader().getResourceAsStream(fileName);
         Properties properties = new Properties();
-        properties.load(resourceAsStream);
+//        properties.load(resourceAsStream);
         return properties;
     }
 

@@ -9,7 +9,7 @@ import com.rancho.yunge.loadBalance.impl.RandomLoadBalance;
 public enum LoadBalance {
     RANDOM(new RandomLoadBalance());
 
-    private RpcLoadBalance loadBalance;
+    public RpcLoadBalance loadBalance;
 
     LoadBalance(RpcLoadBalance loadBalance) {
         this.loadBalance = loadBalance;

@@ -21,16 +21,12 @@ public abstract class AbstractSerializer implements Serializer {
             this.serializerClass = serializerClass;
         }
 
-        //todo handle  exception
         public Serializer getSerializer() {
             try {
                 return serializerClass.newInstance();
-            } catch (InstantiationException e) {
+            } catch (InstantiationException | IllegalAccessException e) {
                 logger.error("instance serializer class error", e);
-                throw new YunGeRpcException("", e);
-            } catch (IllegalAccessException e) {
-                logger.error("instance serializer class error", e);
-                throw new YunGeRpcException("", e);
+                throw new YunGeRpcException(e);
             }
         }
     }

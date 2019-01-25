@@ -14,10 +14,10 @@ public class NettyClient extends AbstractClient {
 
     @Override
     public void asyncSend(String address, RpcRequestWrapper requestWrapper) throws Exception {
-        // client pool	[tips03 : may save 35ms/100invoke if move it to constructor, but it is necessary. cause by ConcurrentHashMap.get]
+
         GenericObjectPool<ClientPooled> clientPool = ClientPooled.getPool(address, NettyPooledClient.class,
                 clientContextHolder.getSerializer(), clientContextHolder.getInvokerFactory());
-        // client proxt
+
         ClientPooled clientPoolProxy = null;
 
         try {
@@ -26,8 +26,6 @@ public class NettyClient extends AbstractClient {
 
             // do invoke
             clientPoolProxy.send(requestWrapper);
-        } catch (Exception e) {
-            throw e;
         } finally{
             // proxy return
             if (clientPoolProxy != null) {

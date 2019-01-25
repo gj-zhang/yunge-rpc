@@ -56,7 +56,7 @@ public class DefaultContextHolder implements ContextHolder {
     private void valid() throws BindPortException {
         PreCondition.check(serializer == null, "serializer can not be null");
         PreCondition.check(communicateType == null, "communicate type can not be null");
-        if (ip == null) {
+        if (ip == null || ip.trim().length() == 0) {
             ip = NetUtil.getLocalAddress();
         }
         if (port <= 0) {
